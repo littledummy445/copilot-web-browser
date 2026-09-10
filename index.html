@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copilot Web Browser</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="app glass">
+      <header class="toolbar glass">
+        <div class="tabs-row">
+          <div id="tabs" class="tabs"></div>
+          <button id="newTabBtn" aria-label="New tab">+</button>
+        </div>
+        <div class="nav-row">
+          <button id="backBtn" aria-label="Back">◀</button>
+          <button id="forwardBtn" aria-label="Forward">▶</button>
+          <button id="refreshBtn" aria-label="Refresh">⟳</button>
+          <input id="addressInput" type="text" placeholder="Enter URL" />
+          <button id="goBtn">Go</button>
+          <button id="bookmarkBtn">☆</button>
+        </div>
+      </header>
+
+      <section class="layout">
+        <aside class="panel glass">
+          <h2>Bookmarks</h2>
+          <ul id="bookmarks"></ul>
+
+          <h2>Profiles</h2>
+          <select id="profileSelect"></select>
+          <div class="inline-controls">
+            <input id="profileNameInput" type="text" placeholder="New profile" />
+            <button id="addProfileBtn">Add</button>
+          </div>
+        </aside>
+
+        <section class="browser-area glass">
+          <iframe id="view" title="Web view" sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"></iframe>
+        </section>
+
+        <aside class="panel glass">
+          <h2>Settings</h2>
+          <label><input id="darkThemeToggle" type="checkbox" checked /> Dark theme</label>
+          <label><input id="animationsToggle" type="checkbox" checked /> Animations</label>
+          <label><input id="glassToggle" type="checkbox" checked /> Glass effects</label>
+
+          <h2>Extensions</h2>
+          <label><input class="extension-toggle" data-ext="reader" type="checkbox" checked /> Reader Mode</label>
+          <label><input class="extension-toggle" data-ext="adblock" type="checkbox" /> Ad Blocker</label>
+          <label><input class="extension-toggle" data-ext="notes" type="checkbox" /> Notes Overlay</label>
+
+          <h2>Media Player</h2>
+          <video controls width="100%">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          </video>
+          <audio controls>
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg" />
+          </audio>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
